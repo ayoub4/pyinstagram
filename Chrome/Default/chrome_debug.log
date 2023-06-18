@@ -1,0 +1,10 @@
+[13772:22736:0618/121045.344:WARNING:chrome_main_delegate.cc(593)] This is Chrome version 114.0.5735.134 (not a warning)
+[13772:22736:0618/121045.421:INFO:chrome_browser_cloud_management_controller.cc(167)] Starting CBCM Controller Initialization
+[13772:22736:0618/121045.421:INFO:chrome_browser_cloud_management_controller.cc(195)] No machine level policy manager exists.
+[13772:22736:0618/121046.341:INFO:CONSOLE(0)] "Error with Permissions-Policy header: Unrecognized feature: 'ambient-light-sensor'.", source:  (0)
+[13772:22736:0618/121048.264:INFO:CONSOLE(59)] "ErrorUtils caught an error:
+
+Please wait a few minutes before you try again.
+
+Subsequent non-fatal errors won't be logged; see https://fburl.com/debugjs.", source: https://static.cdninstagram.com/rsrc.php/v3/yO/r/83dG5l2nXLv.js?_nc_x=Ij3Wp8lg5Kz (59)
+[13772:22736:0618/121049.577:WARNING:pref_notifier_impl.cc(41)] Pref observer for media_router.cast_allow_all_ips found at shutdown.
