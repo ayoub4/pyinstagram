@@ -1,0 +1,63 @@
+@font-face {
+    font-family: 'Nunito';
+    src: url("../font/Nunito-Regular.ttf");
+}
+
+:root {
+    --navbar-height: 60px;
+}
+
+html,
+body {
+    color: #383838;
+}
+
+li {
+    padding-bottom: 4px;
+}
+
+.iframeFullscreen {
+    display: block;
+    width: 100%;
+    height: 4000px;
+    /* height: 100vh; */
+    border: none;
+    overflow: hidden;
+}
+
+.center {
+    text-align: center;
+}
+
+/*overide*/
+.navbar {
+    background: white;
+    z-index: 10;
+    min-width: 1024px;
+    width: 100%;
+}
+
+/*overide*/
+.container {
+    padding-top: calc(var(--navbar-height) * 1.5);
+    min-width: 1024px;
+}
+
+.text-title-card {
+    color: #4e73df !important;
+}
+
+/*overide*/
+.btn {
+    margin-top: 2px;
+}
+
+.blink {
+    animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+    50% {
+        opacity: 0;
+    }
+}

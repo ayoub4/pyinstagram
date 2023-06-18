@@ -1,0 +1,299 @@
+<!-- i use exact same file in both instagram twitter extensions
+version: 1
+update: 6/6/3030
+ -->
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link href="/src/assets/css/sb-admin-2.css" rel="stylesheet" />
+    <link href="/src/vendor/fontawesome-free/css/all.css" rel="stylesheet" type="text/css">
+    <link href="/src/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.css" rel="stylesheet" type="text/css">
+    <script type="text/javascript" src="/src/vendor/jquery/jquery-3.5.0.js"></script>
+    <script type="text/javascript" src="/src/vendor/jquery-ui-1.12.1.custom/jquery-ui.min.js"></script>
+    <link href="/src/assets/css/custom-extension.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    <div id="divHeaderInformations" style="text-align:left;"> Version: <span id="spanVersion"></span>
+        <span id="spanLinksTopRightCorner" style="float:right;">
+            <a target="_blank" href="https://automatize.v2.nintenda.fr/redirect/services/resetLicense">New license</a> / <a target="_blank" href="https://automatize.v2.nintenda.fr/redirect/resell">Resell</a> / <a target="_blank" href="#"
+              id="aNewslettersContact">Contact</a>
+        </span>
+    </div>
+    <div id="divLicense" class="row nnl">
+        <!-- DIV LICENSE KEY -->
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary"> {{translate.enterYourLicenseKey}} </h6>
+                </div>
+                <div class="card-body">
+                    <div style="text-align: center; background:white; margin:auto; border: 0px solid;">
+                        <!-- <p> Enter your License Key </p> -->
+                        <p>{{translate.enterYourLicenseKey}}</p>
+                        <input class="form-control form-control-user" type="text" id="inputLicenseKey" value="" />
+                        <br>
+                        <p>{{translate.enterYourEmail}}</p>
+                        <input class="form-control form-control-user" type="email" id="inputEmailLicenseKey" value="" />
+                        <br>
+                        <button id="buttonLicenseValidateToClick" href="#" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-check"></i>
+                            </span>
+                            <span id="buttonLicenseValidateToTranslate" class="text">{{translate.validate}}</span>
+                        </button>
+                        <p class="text-xs" style="padding-top:5px">Do not close the popup while validating.</p>
+                        <p id="pErrorLicense" class="text-xs" style="color:red"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header">
+                    <h6 class="m-0 font-weight-bold text-primary"> {{translate.buyALicense}} </h6>
+                </div>
+                <div class="card-body">
+                    <div style="text-align: center; background:white; margin:auto; border: 0px solid;">
+                        <button id="buttonBuyALicense" class="btn btn-success btn-icon-split">
+                            <span class="icon text-white-50">
+                                <i class="fas fa-key"></i>
+                            </span>
+                            <span class="text">{{translate.buyALicense}}</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="divAd" class="row nl" style="display: none;">
+        <div class="col-lg-12">
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h5 class="m-0 font-weight-bold text-title-card">
+                        <span id="spanTitleInstaMAX" style="cursor:pointer;"><sup class="blink" style="color:red;font-size:0.8rem;margin-right:4px;"><b>NEW</b></sup> Insta<sup>MAX</sup>
+                        </span>
+                        <span style="float:right;font-size:1rem">
+                            <span id="spanToggleDetails" style="cursor:pointer;margin-right:6px">[Details]</span>
+                            <span id="spanHideAd" style="cursor:pointer;color:red;">[Ignore]</span>
+                        </span>
+                    </h5>
+                </div>
+                <div id="divAdCardBodyContent" class="card-body center" style="display:none;">
+                    <span style="font-size:0.8rem;">This is a short ad for my new software:</span>
+                    <p>I'm glad to present you my new Instagram Bot, if you like Social Bot, you will love <b>Insta<sup>MAX</sup></b>, this is the ultimate Instagram automation software. It is available in English and French, more languages will be
+                        added soon. <br>And to reward your loyalty, you can get an extra <b>20% OFF</b> on top of the current <b>53% OFF</b> limited offer, simply send me an email with your license key to get your <b>20% discount</b>!</p>
+                    <p>If you are interested, click on the image below:</p>
+                    <a target="_blank" href="https://automatize.v2.nintenda.fr/redirect/softwares/instamax?src=instagram.extension"><img class="" style="width:100%;  filter: drop-shadow(5px 5px 5px #222);"
+                          src="/src/assets/img/instamax/banner-instamax.webp" alt="Automatize - InstaMAX" /></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- DIV EXTENSION CONTENT -->
+    <div id="divMainContent" class="row nl">
+        <!-- <div class="card shadow"> -->
+        <div id="divStatusAndConfiguration" class="card-body">
+            <div style="display:none">
+                <div id="divTimer">00:00:00</div>
+                <hr>
+            </div>
+            <textarea id="copyClipboard" style="display:none"></textarea>
+            <div class="shadow-strong">
+                <table>
+                    <tr>
+                        <th>{{translate.status}}</th>
+                        <td id="tdStatus">
+                            <div id="divStatus" style="color:white;font-weight:bold;">STOPPED</div>
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>{{translate.mode}}</th>
+                        <td>
+                            <form>
+                                <label id="labelRadioBoxFollow"><input type="radio" name="type" id="radioBoxFollow" checked /><b>FOLLOW</b></label>
+                                <label id="labelRadioBoxUnFollow"><input type="radio" name="type" id="radioBoxUnfollow" /><b>UNFOLLOW</b></label>
+                                <label id="labelRadioBoxScrape"><input type="radio" name="type" id="radioBoxScrape" /><b>SCRAPE</b></label>
+                            </form>
+                        </td>
+                    </tr>
+                    <tr id="trFollows">
+                        <th>{{translate.follows}}</th>
+                        <td>
+                            <font id="divNbFollows" size="4">0</font>
+                        </td>
+                    </tr>
+                    <tr id="trUnfollows">
+                        <th>{{translate.unfollows}}</th>
+                        <td>
+                            <font id="divNbUnfollows" size="4">0</font>
+                        </td>
+                    </tr>
+                    <tr id="trLastUsername">
+                        <th>{{translate.last}}</th>
+                        <td>
+                            <font id="divLastFollowed">-</font>
+                        </td>
+                    </tr>
+                    <tr id="trLog">
+                        <th>{{translate.log}}</th>
+                        <td id="tdLog">
+                            <div id="divLog"></div>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+            <!-- DIV START STOP -->
+            <div id="divStartStop">
+                <center>
+                    <button id="buttonStart" class="btn btn-info btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-flag"></i>
+                        </span>
+                        <span class="text"><b>START</b></span>
+                    </button>
+                    <span style="padding:10px"></span>
+                    <button id="buttonStop" class="btn btn-danger btn-icon-split">
+                        <span class="icon text-white-50">
+                            <i class="fas fa-stop"></i>
+                        </span>
+                        <span class="text"><b>STOP</b></span>
+                    </button>
+                </center>
+            </div>
+            <div id="divConfigurationScrape" style="display: block">
+                <div class="shadow-strong">
+                    <div id="divTableFixed" class="tableFixHead">
+                        <table id="tableUsernamesInfos" class="specialTable">
+                            <thead>
+                                <tr>
+                                    <th id="thNumUsername">N</th>
+                                    <th id="thImgSrc">Image</th>
+                                    <th style="width:100px;max-width:100px" id="thUsernames">Username</th>
+                                    <th id="thIsFollowed">Followed</th>
+                                </tr>
+                            </thead>
+                            <tbody id="tBodyUsernamesInfoList">
+                                <tr>
+                                    <td class='tdNumUsernameList'>-</td>
+                                    <td class='tdImgSrcList'>-</td>
+                                    <td class='tdUsernamesList'>-</td>
+                                    <td class='tdIsFollowedList'>-</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <div class="shadow-strong">
+                    <table>
+                        <tr>
+                            <td id="tdNbUsernamesScraped">0</td>
+                            <th id="tdCopyUsernames" style="cursor: pointer;">Copy Usernames</th>
+                            <th id="tdClear" style="cursor: pointer;">Clear</th>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <div class="shadow-strong">
+                    <table>
+                        <tr>
+                            <th>Export</th>
+                            <th id="exportXLS" style="cursor: pointer;background-color:GREEN"><i class="fas fa-file-excel"></i> XLS</th>
+                            <th id="exportCSV" style="cursor: pointer;background-color:MediumSeaGreen "><i class="fas fa-file-csv"></i> CSV</th>
+                            <th id="exportTXT" style="cursor: pointer;background-color:SkyBlue"><i class="fas fa-file-alt"></i> TXT</th>
+                            <th id="exportHTML" style="cursor: pointer;background-color:DarkCyan"><i class="fas fa-file-code"></i> HTML</th>
+                        </tr>
+                    </table>
+                </div>
+                <br>
+                <div class="shadow-strong">
+                    <table>
+                        <tr>
+                            <th>Sleep (seconds)</th>
+                            <th>For X usernames</th>
+                        </tr>
+                        <tr>
+                            <td><input type="number" id="inputNumberSleepTimeScrapeSeconds" min="1" value="30" /></td>
+                            <td><input type="number" id="inputNumberSleepEveryXUsernamesScraped" min="12" value="50" /></td>
+                        </tr>
+                        <tr>
+                            <th colspan="2">Max usernames</th>
+                        </tr>
+                        <tr>
+                            <td colspan="2"><input type="number" id="inputNumberUsernamesScrapedMax" min="1" value="100" /></td>
+                        </tr>
+                    </table>
+                </div>
+                <iframe id="txtArea1" style="display:none"></iframe>
+            </div>
+            <div id="divConfigurationFollowOrUnfollow" class="shadow-strong" style="display: none">
+                <table>
+                    <tr>
+                        <th colspan="2">Sleep between follow/unfollow (seconds)</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            <font size=2>Minimun</font><input type="number" id="inputNumberDelaySecMin" min="1" value="60" style="margin-top:2px" />
+                        </td>
+                        <td>
+                            <font size=2>Maximum</font><input type="number" id="inputNumberDelaySecMax" min="1" value="120" style="margin-top:2px" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th>Sleep (minutes)</th>
+                        <th>For X follows/unfollows</th>
+                    </tr>
+                    <tr>
+                        <td><input type="number" id="inputNumberBreakTimeInMins" min="1" value="10" /></td>
+                        <td><input type="number" id="inputNumberBreakEveryXFollowsOrUnfollows" min="2" value="20" /></td>
+                    </tr>
+                    <tr>
+                        <th colspan="2">Max follows/unfollows</th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><input type="number" id="inputNumberFollowUnfollowMax" min="1" value="50" /></td>
+                    </tr>
+                    <tr>
+                        <th colspan="1">Whitelist</th>
+                        <th colspan="1"><label><input type="checkbox" id="autoWhitelist" value="1" /> Auto whitelist </label></th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><textarea id="textareaWhitelist"></textarea></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="shadow-strong">
+                <table>
+                    <tr>
+                        <th colspan="2"> Optimize memory </th>
+                    </tr>
+                    <tr>
+                        <td colspan="2"><label><input type="checkbox" id="checkboxOptimizeMemory" value="1" />
+                                <span style="font-size: 12px;">Delete already used accounts from HTML page to free memory</span>
+                            </label>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+    </div>
+    <div style="display:none">
+        <a target="_blank" href="https://codecanyon.net/user/automatize/portfolio">
+            <img src="/src/assets/img/icons/icon_automatize.png" style="width:24px;height:24px;padding:0px;margin:0px" />Automatize Portfolio</a>
+    </div>
+    <script type="module" src="/src/js/class/Translation.js"></script>
+    <script type="module" src="/src/js/translate.js"></script>
+    <!-- <script src="/src/js/utils-chrome-extension.js"></script> -->
+    <!-- <script src="/src/js/class/Utils.js"></script> -->
+    <!-- <script type="module" src="/src/js/class/Utils.js"></script> -->
+    <!-- <script src="/src/js/urls.js"></script> -->
+    <script type="module" src="/src/js/licensing.js"></script>
+    <script type="module" src="/src/js/popup.js"></script>
+    <script type="module" src="/src/js/update.js"></script>
+    <!-- <script src="/src/js/instagram-extension.js"></script> -->
+    <!-- <script src="/src/js/twitter-extension.js"></script>
+    <script src="/src/js/tiktok-extension.js"></script> -->
+</body>
+
+</html>

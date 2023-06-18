@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <script src="vendor/jquery/3.6.1/jquery-3.6.1.min.js"></script>
+    <script src="assets/js/software-infos.js"></script>
+    <script language="javascript" type="text/javascript">
+        openReviewsPage = function() {
+            window.open(URL_REVIEWS);
+        }
+        window.addEventListener("hashchange", function() {
+            window.scrollTo(window.scrollX, window.scrollY - 100);
+        });
+    </script>
+    <link href="assets/css/sb-admin-2.css" rel="stylesheet">
+    <link href="assets/css/custom.css" rel="stylesheet">
+</head>
+
+<body id="top">
+    <!-- /start/ NAVIGATION BAR at the top -->
+    <nav class="navbar mb-4 shadow position-fixed">
+        <div class="center" style="width:100%;">
+            <a class="btn btn-secondary" href="#divIntro">Intro</a>
+            <a class="btn btn-primary" href="#divNewsletter">Newsletter</a>
+            <script type="text/javascript">
+                if (PASSWORD_ZIP) {
+                    document.write(`<a class="btn btn-success" href="#divThankYouAndPassword">Password</a>`);
+                }
+            </script>
+            <a class="btn btn-danger" href="#divLicenseKey">License Key</a>
+            <a class="btn btn-primary" href="#divInstallationAndUpdate">Installation & Update</a>
+            <a class="btn btn-primary" href="#divHowToUse">How To Use</a>
+            <a class="btn btn-info" href="#divMultipleAccounts">Multiple accounts</a>
+            <a class="btn btn-info" href="#divAdVPNAndProxy">VPN & Proxy</a>
+            <!-- <a class="btn btn-info" href="#proxy">Proxy</a> -->
+            <a class="btn btn-info" href="#divVideos">Tutorial Videos</a>
+            <!--  -->
+            <a class="btn btn-secondary" href="#divSupport">Support / Contact</a>
+            <a class="btn btn-success" href="#" onclick="openReviewsPage()">Review</a>
+            <a class="btn btn-secondary" href="#divChangelog">Changelog</a>
+            <a class="btn btn-primary" target="_blank" href="https://automatize.v2.nintenda.fr/redirect/resell">Resell</a>
+        </div>
+    </nav>
+    <!-- \end\ NAVIGATION BAR -->
+    <div class="container">
+        <!-- /start/ TITLE & LOGO IMAGE -->
+        <div id="divIntro" class="card shadow mb-4 center">
+            <div class="card-header py-3">
+                <h2 class="m-0 font-weight-bold text-title-card">
+                    <script type="text/javascript">
+                        document.write(document.title);
+                    </script>
+                </h2>
+            </div>
+            <div class="card-body">
+                <!-- /start/ SHORT INTRO same code in all documentation but it contains variable that I set different for every documentation -->
+                <div id="divShortIntro">
+                    <script src="assets/js/divs-common/div-short-intro.js"></script>
+                </div>
+                <!-- \end\ SHORT INTRO -->
+                <!-- /start/ INTRO SOFTWARE, same code in all documentation but it contains INTRO_SOFTWARE_MESSAGE that I set different for every documentation -->
+                <div class="card mb-4">
+                    <div class="card border-left-info shadow h-100 py-2">
+                        <div class="card-body" style="text-align:left;">
+                            <script type="text/javascript">
+                                document.write(INTRO_SOFTWARE_MESSAGE);
+                            </script>
+                            <div id="myOtherApps">
+                                <script src="assets/js/divs-common/div-other-apps.js"></script>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- \end\ INTRO SOFTWARE -->
+                <!-- /start/ THANK YOU MESSAGE, same on all my documentations -->
+                <div id="divThankYouAndPassword" class="card mb-4">
+                    <script src="assets/js/divs-common/div-thank-you-and-password.js"></script>
+                </div>
+                <!-- \end\ THANK YOU MESSAGE, same on all my documentations -->
+                <!-- /start/ LICENSE KEY MAX, same on all my documentations -->
+                <div id="divLicenseKey" class="card mb-4">
+                    <script src="assets/js/divs-common/div-license.js"></script>
+                </div>
+                <!-- \end\ LICENSE KEY MAX, same on all my documentations -->
+            </div>
+        </div>
+        <!-- \end\ TITLE & LOGO IMAGE -->
+        <!-- /start/ ADS -->
+        <div id="divAds" class="card shadow mb-4">
+            <script src="assets/js/divs-common/div-ad-instamax.js"></script>
+        </div>
+        <!-- \end\ ADS -->
+        <!-- /start/ NEWSLETTER, same on all my documentations -->
+        <div id="divNewsletter" class="card shadow mb-4">
+            <script src="assets/js/divs-common/div-newsletter.js"></script>
+        </div>
+        <!-- \end\ NEWSLETTER, same on all my documentations -->
+        <!-- /start/ INSTALLATION, different on every documentations -->
+        <div id="divInstallationAndUpdate" class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h4 class="m-0 font-weight-bold text-title-card"> Installation & Update</h4>
+            </div>
+            <div class="card-body">
+                <div id="divInstallWebExtension">
+                    <script src="assets/js/divs-common/div-install-web-extension.js"></script>
+                </div>
+            </div>
+        </div>
+        <!-- \end\ INSTALLATION, different on every documentations -->
+        <!-- /start/ HOW TO USE, different on every documentations, but rules should be same for social networks bots -->
+        <div id="divHowToUse" class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h4 class="m-0 font-weight-bold text-title-card"> How To Use </h4>
+            </div>
+            <div class="card-body">
+                <!-- /start/  set english  -->
+                <div id="divCardSetAccountInEnglish" class="card border-left-danger shadow h-100">
+                    <script data-instagram="true" src="assets/js/divs-common/div-set-account-english.js"></script>
+                </div>
+                <!-- \end\ set english -->
+                <br>
+                <!-- /start/ guidelines -->
+                <div id="divCardGuidelinesInstagram" class="card border-left-danger shadow h-100">
+                    <script src="assets/js/divs-common/div-guidelines-instagram.js"></script>
+                </div>
+                <!-- \end\ guidelines -->
+                <br>
+                <p>For the first installation, <b>you have to enter your license key</b> (your purchase code is also valid, <a target="_blank" href="https://help.market.envato.com/hc/en-us/articles/202822600-Where-Is-My-Purchase-Code-">Where is my
+                        purchase code?</a>), if you have any problem during this step, send me an email.</p>
+                <p>You will find below detailed explanations and tutorial videos. If you are lazy to read, just watch the videos :)</p>
+                <div id="how-to-follow-unfollow-scrape" class="card mb-4 py-3 border-left-info">
+                    <h3 style="padding-left:20px"> How to Auto Follow/Unfollow/Scrape</h3>
+                    <hr>
+                    <div class="card-body">
+                        <ol>
+                            <li>Open the web browser and go the the account or the post that you want to follow/unfollow/scrape its <b>Followers</b>, <b>Following</b> or <b>Likes</b>
+                                <br>
+                                <br>
+                                <ul>
+                                    <li>Example account: <a href="https://www.instagram.com/natgeo/">https://www.instagram.com/natgeo/</a></li>
+                                    <li>Example post: <a href="https://www.instagram.com/p/BrUpd4AgEe3/">https://www.instagram.com/p/BrUpd4AgEe3/</a></li>
+                                </ul>
+                            </li>
+                            <br>
+                            <li>You can choose to follow/unfollow/scrape the <b>Followers</b> or <b>Following</b> of a specific account, or the <b>Likes</b> of a specific post: <ul>
+                                    <br>
+                                    <li><b>For the Followers:</b> Click on his followers number to open the <b>Followers</b> popup, in our example: <b>95.3m</b> followers <br><img class="shadow" src="assets/natgeo_account_followers.png" /></li>
+                                    <br>
+                                    <li><b>For the Following:</b> Click on his following number to open the <b>Following</b> popup, in our example: <b>132</b> following <br><img class="shadow" src="assets/natgeo_account_following.png" /></li>
+                                    <br>
+                                    <li><b>For the Likes:</b> Open the post in a new tab, then click on the likes number to open the <b>Likes</b> popup, in our example: <b>50,340 likes</b>
+                                        <br>
+                                        <img class="shadow" src="assets/natgeo_post_likes.png" /></li>
+                                </ul>
+                            </li>
+                            <br>
+                            <li>Open the extension (click on the icon at the top right corner) <br><img class="shadow" src="assets/extensions_corner.png" /></li>
+                            <br>
+                            <li>Choose the mode (<b>FOLLOW</b>, <b>UNFOLLOW</b> or <b>SCRAPE</b>), change the configuration if you want to, then click on <b>START</b>
+                                <br>
+                                <img class="shadow" src="assets/extension_follow_started.png" /></li>
+                            <br>
+                            <li><b>[FOR SCRAPE MODE ONLY]</b> You can export the accounts in different formats: <b>XLS, CSV, TXT and HTML</b>. Simply click on the format you want in the Export bar:</i>
+                                <br>
+                                <img class="shadow" src="assets/scrape_mode_export.png" /></li>
+                        </ol>
+                        <div class="card mb-4 py-3 border-left-secondary">
+                            <div class="card-body">
+                                <strong>IMPORTANT NOTE:</strong>
+                                <br>
+                                <br>
+                                <ul>
+                                    <li><b>It is mandatory to use it in a new window without any other tab, and do not minimize that window. If you use it in a normal tab and loose the visibility, Twitter and Instagram will not load the accounts.</b>
+                                    </li>
+                                    <li><b>Do not touch anything on the the page while the software is running.</b></li>
+                                    <li>If you click on STOP while it is loading accounts or in a sleeping state, you should refresh the current page before starting it again.</li>
+                                    <li>If you cannot load more accounts, check the javascript console, if you see an error 429, it means you reached the Instagram / Twitter rate limit, so please wait 30 - 90 minutes.</li>
+                                    <li>You can also scrape the usernames of a post comments, but you have to click on "Load more comments" to load the comments first. This feature is in BETA, for Instagram only.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <br>
+                        <p><b>Whitelist:</b> You can add usernames in the whitelist so you don't follow or unfollow them again (you can activate "Auto whitelist" to add them automatically), you have to separate each username with a comma, example:
+                            <i>instagram,natgeo,natgeowild</i>
+                        </p>
+                    </div>
+                </div>
+                <div id="divMultipleAccounts" class="card mb-4 py-3 border-left-info">
+                    <h3 style="padding-left:20px"> How to use multiple sessions/accounts</h3>
+                    <hr>
+                    <div class="card-body">
+                        <p>The extension is made to work with the current connected Instagram session on the web browser. <br>But there is a “trick” to use it with more than 1 session, go to Extensions (on the web browser), click on Details on my
+                            extension, and Allow in incognito. <br>So you can use it on 2 sessions per profile, then you can add more profiles: <a
+                              href="https://support.google.com/chrome/answer/2364824?hl=en">https://support.google.com/chrome/answer/2364824?hl=en</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- \end\ HOW TO USE -->
+		 <!-- /start/ VPN & Proxy -->
+		<div id="divAdVPNAndProxy" class="card shadow mb-4">
+                <script src="assets/js/divs-common/div-ad-vpn-proxy.js"></script>
+        </div>
+        <!-- \end\ VPN & Proxy -->
+        <!-- /start/ AD PROXY, same in all my documentation -->
+        <!-- \end\ AD PROXY, same in all my documentation -->
+        <!-- /start/ AD VPN, same in all my documentation -->
+        <!-- \end\ AD VPN, same in all my documentation -->
+        <div id="videos" class="card shadow mb-4">
+            <div class="card-header py-3">
+                <h4 class="m-0 font-weight-bold text-title-card"> Tutorial Videos </h4>
+            </div>
+            <div class="card-body">
+                <div id="videoInstallation" class="card mb-4 py-3 border-left-primary">
+                    <h3 style="padding-left:20px"> Installation of the Extension</h3>
+                    <hr>
+                    <div class="card-body">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/i7rwy0mlmCQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card mb-4 py-3 border-left-info">
+                    <h3 style="padding-left:20px">How to Follow the Followers of a specific account</h3>
+                    <hr>
+                    <div class="card-body">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/xlr8BAyLGp0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card mb-4 py-3 border-left-info">
+                    <h3 style="padding-left:20px">How to Unfollow the Followers of a specific account</h3>
+                    <hr>
+                    <div class="card-body">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/wt7UPlk0kUQ" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+                <div class="card mb-4 py-3 border-left-info">
+                    <h3 style="padding-left:20px">How to Scrape and Export the Followers of a specific account</h3>
+                    <hr>
+                    <div class="card-body">
+                        <iframe width="800" height="450" src="https://www.youtube.com/embed/kPviXjvhPHA" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- /start/ SUPPORT, same in all my documentation -->
+        <div id="divSupport" class="card shadow mb-4">
+            <div>
+                <script data-displayfetcherrorwarning="true" src="assets/js/divs-common/div-support-contact.js"></script>
+            </div>
+            <div>
+                <script src="assets/js/div-example-support-request.js"></script>
+            </div>
+        </div>
+        <!-- \end\ SUPPORT, same in all my documentation -->
+        <!-- /start/ RESELL, same in all my documentation -->
+        <div id="divResell" class="card shadow mb-4">
+            <script src="assets/js/divs-common/div-resell.js"></script>
+        </div>
+        <!-- \end\ RESELL, same in all my documentation -->
+        <!-- /start/ changelog -->
+        <div id="divChangelog" class="card shadow mb-4">
+            <script src="assets/js/div-changelog.js"></script>
+        </div>
+        <!-- \end\ changelog -->
+    </div>
+    <!-- /start/ FOOTER, same in all my documentation -->
+    <footer id="divFooter" class="center">
+        <script src="assets/js/divs-common/div-footer.js"></script>
+    </footer>
+    <!-- \end\ FOOTER, same in all my documentation -->
+</body>
+
+</html>

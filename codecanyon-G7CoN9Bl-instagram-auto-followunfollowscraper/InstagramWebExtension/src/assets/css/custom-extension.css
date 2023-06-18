@@ -1,0 +1,176 @@
+@font-face {
+  font-family: 'Nunito';
+  src: url("/src/assets/fonts/Nunito-Regular.ttf");
+}
+
+.center {
+  text-align: center;
+}
+
+.blink {
+  animation: blinker 1s linear infinite;
+}
+
+@keyframes blinker {
+  50% {
+    opacity: 0;
+  }
+}
+
+body {
+  background-color: #FFFFFF;
+  /*
+    background: linear-gradient(to bottom left, #C13584, #FFDC80);//ig
+    background: linear-gradient(to bottom left, #4FC0E8, #B2EAFD); //twitter
+    */
+  background: white;
+  width: 420px;
+  font-size: 86%;
+  font-family: 'Nunito';
+  color: #454545;
+  /* padding-bottom: 5px;
+    padding-top: 5px; */
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+textarea {
+  width: 100%;
+  max-width: 390px;
+  font-size: 100%;
+  border: none;
+  height: 30px;
+}
+
+a {
+  width: 140px;
+  text-align: center;
+  text-decoration: none;
+  color: #DF4000;
+}
+
+#spanLinksTopRightCorner a {
+  color: white;
+}
+
+input[type=number] {
+  border: none;
+  height: 100%;
+  width: 100%;
+  font-size: 150%;
+  text-align: center;
+}
+
+input[type=radio] {
+  margin-right: 5px;
+}
+
+td:first-child:after {
+  content: attr(aria-label);
+}
+
+.tableFixHead {
+  overflow-y: auto;
+  height: auto;
+  max-height: 300px;
+}
+
+.tableFixHead th {
+  position: sticky;
+  top: 0;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  text-align: center;
+  border-radius: 5px;
+}
+
+td,
+th {
+  border: 1px solid #ddd;
+  padding: 10px;
+  border-radius: 0px;
+}
+
+th {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  /*  text-align: left; */
+  background-color: #262626;
+  color: white;
+}
+
+.specialTable td {
+  padding: 0px;
+  /* height: 30px; */
+}
+
+.specialTable tr {
+  /* height: 30px; */
+}
+
+.imgInTableScrape {
+  height: 28px;
+  /* width: 30px; */
+  padding: 0px;
+  /* margin-bottom: -4px; */
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
+
+tr:nth-child(odd) {
+  background-color: #FFFFFF;
+}
+
+tr:hover {
+  background-color: #ddd;
+}
+
+.shadow-strong {
+  box-shadow: 0 0.15rem 1.75rem 0 rgba(58, 59, 69, 0.50) !important;
+}
+
+#tdLog {
+  padding: 5px;
+}
+
+#divLog {
+  overflow-y: scroll;
+  max-height: 100px;
+  font-size: 9px;
+  text-align: left;
+  color: black;
+}
+
+#divStartStop {
+  margin-top: 14px;
+  margin-bottom: 12px;
+}
+
+#divLicense {
+  margin: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 100;
+}
+
+#divHeaderInformations {
+  font-size: 10px;
+  padding: 2px;
+}
+
+#aNewslettersContact {
+  color: white;
+}
+
+#divStatusAndConfiguration {
+  padding-top: 0 !important;
+}
