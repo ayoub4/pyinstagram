@@ -63,7 +63,7 @@ time.sleep(2)
 # Path to the second image
 second_image_path = "start.png"
 
-# Locate and click the second image on the screen using PyAutoGUI
+# Locate and click the second image on the screen using PyAut
 locate_and_click(second_image_path)
 
 # Delay for 2 seconds
